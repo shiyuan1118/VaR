@@ -1,0 +1,6 @@
+library(ggplot2)
+Risiko_Allokation=c(7.55,6.48,2.45,12,9.85,7.21,12.8,5.02,4.31,3.52,9.33,8.54,7.83,12.8,7.6,4.04,1.2,11.6,6.22,5.51,12.8,6.54,4.69,3.2,11.2,9.74,7.89,12.8)
+portfolio=c(1,2,3,4,5,6,7,1,2,3,4,5,6,7,1,2,3,4,5,6,7,1,2,3,4,5,6,7)
+method=c("Standard-alone risk","Standard-alone risk","Standard-alone risk","Standard-alone risk","Standard-alone risk","Standard-alone risk","Standard-alone risk","Activity-level method","Activity-level method","Activity-level method","Activity-level method","Activity-level method","Activity-level method","Activity-level method","Incremental method","Incremental method","Incremental method","Incremental method","Incremental method","Incremental method","Incremental method","Shapley method","Shapley method","Shapley method","Shapley method","Shapley method","Shapley method","Shapley method")
+Mydata=data.frame(method,portfolio,Risiko_Allokation)
+plot=ggplot(Mydata,aes(x=portfolio,y=Risiko_Allokation,fill=method))+geom_bar(stat='identity',position="dodge")
